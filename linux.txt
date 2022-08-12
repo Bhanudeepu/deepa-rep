@@ -143,6 +143,16 @@ echo "reverse number of entered digit is" $rev
 echo "give me the file name and extension"
 read $a
 sed '/^$/d' sample
+--------------------
+10
+
+#!/bin/bash
+echo "give me a number or string"
+read a
+i=$((${#a}-1))
+echo ${a:$i:1}
+~
+
 
 
 
