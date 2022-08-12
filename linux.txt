@@ -136,6 +136,14 @@ rev=$(( $rev * 10 + $sd ))
 a=$(( $a / 10))
 done
 echo "reverse number of entered digit is" $rev
+------------------------------------
+9
+
+#!/bin/bash
+echo "give me the file name and extension"
+read $a
+sed '/^$/d' sample
+
 
 
 
