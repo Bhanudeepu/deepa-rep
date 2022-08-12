@@ -130,7 +130,48 @@ fi
 
 -------------------------------------------------------------------
 
+apt update
+    2  clear
+    3  apt upgrade
+    4  apt install ansible ansible-core
+    5  apt install ansible
+    6  ansible --version
+    7  clear
+    8  history
+adduser raju
+   19  visudo
+   20  vi /etc/ssh/sshd_config
+   21  history
+apt-get update
+    2  clear
+    3  adduser raju
+    4  visudo
+    5  vi /etc/ssh/sshd_config
+    6  history
+slave machine commands
 
+
+
+
+
+
+
+ssh-keygen
+    2  ssh-copy-id raju@
+    3  ssh-copy-id raju@10.0.0.5
+    4  clear
+    5  vi /etc/ansible/hosts
+    6  sudo vi /etc/ansible/hosts
+    7  ansible all -m ping
+    8  vi webapp.yml
+    9  vi app.py
+   10  ansible-playbook webapp.yml --syntax-check
+   11  ansible-playbook webapp.yml -check
+   12  ansible-playbook webapp.yml
+   13  sudo ansible-playbook webapp.yml
+   14  ansible-playbook webapp.yaml --user=raju --extra-vars "ansible_sudo_pass=Raju@2501"
+   15  ansible-playbook webapp.yml --user=raju --extra-vars "ansible_sudo_pass=Raju@2501"
+   16  history
 
 ----------------------------------------------------------------
 
