@@ -75,8 +75,34 @@ do
 done
 
 ------------------------------------------------
+4)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------
+
+5)
+
+echo "select SCP or SSH"
+read a b
+echo "give me two numbers"
+read a b
+bc c =$a+$b | echo c
+bc $a+$b
 
 
 
