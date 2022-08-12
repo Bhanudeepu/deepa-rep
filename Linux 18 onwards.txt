@@ -96,6 +96,41 @@ do
     mv -v "$file" "${file%.$old_ext}.$new_ext"
 done;
 
+  ----------------------------------------------
+  30)
   
+  #!/bin/bash
+
+if [ $# -eq 1 ] #To check whether cla is passed or not
+then
+	echo "Before locking"
+	ls -l $1/   #To display the file permissions and many more before locking the permissions for groups and others.
+	chmod -R go-rwx $1/    #To remove all permissions for groups and others for the directory and it's contents.
+   echo "After locking"
+   ls -l $1/   #displaying the permissions of all the contents present in the given directory after locking it.
+else
+	echo "Error : Please pass the directory in command line"
+fi
+
+
+
+#!/bin/bash
+
+if [ $# -eq 1 ] 
+then
+	echo "Before locking"
+	ls -l $1/   
+	chmod -R go-rwx $1/    
+   echo "After locking"
+   ls -l $1/   
+else
+	echo "Error : Please pass the directory in command line"
+fi
   
+
+-------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------
 
