@@ -103,6 +103,11 @@ read a b
 echo $a+$b | bc
 ------------------------------------
 6)
+"give me two numbers and operators"
+read a b c
+echo $a $c $b | bc
+
+
 
 
 --------------------------------
