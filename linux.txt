@@ -154,7 +154,7 @@ echo ${a:$i:1}
 ~
 -----------------------------
 
-12)
+13)
 #!/bin/bash
 echo "Chess Board"
 
@@ -175,6 +175,21 @@ do
         echo -e -n "\033[0m" " "
         echo ' '
 done
+-----------------------
+12)
+#!/bin/bash
+echo " give me a number or string"
+read a b c d e
+n=${#a}
+echo "string length is " $n
+m=${#b}
+echo "string length is " $m
+o=${#c}
+echo "string length is " $o
+p=${#d}
+echo "string length is " $p
+q=${#e}
+echo "string length is " $q
 
 
 
