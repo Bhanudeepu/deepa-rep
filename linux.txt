@@ -458,8 +458,130 @@ do
 echo -n "$f1 " fn=$((f1+f2)) f1=$f2 f2=$fn 
 done 
 echo
+
+
+16th also same script
 --------------------------------------------
 
   21)
   
+  #!/bin/bash
+
+hour=`date +%c | tr -s " " | cut -d " " -f4 | cut -d ":" -f1`   
+day=`date +%A`  
+mon=`date +%B`  
+dte=`date +%d`  
+year=`date +%Y`  
+tf=`date +%r`    
+if [ $hour -ge 5 -a $hour -lt 12 ]  
+then
+        echo -e "Good morning `whoami`, Have nice day!\nThis is $day $dte in $mon of $year ($tf)"
+elif [ $hour -ge 12 -a $hour -le 13 ]   
+then
+        echo -e "Good noon `whoami`, Have nice day!\nThis is $day $dte in $mon of $year ($tf)"
+elif [ $hour -ge 14 -a $hour -lt 17 ]  
+then
+        echo -e "Good afternoon `whoami`, Have nice day!\nThis is $day $dte in $mon of $year ($tf)"
+elif [ $hour -ge 17 -a $hour -lt 21 ]   
+then
+        echo -e "Good evening `whoami`, Have nice day!\nThis is $day $dte in $mon of $year ($tf)"
+elif [ $hour -ge 21 -o $hour -lt 5 ]   
+then
+        echo -e "Good night `whoami`, Have nice day!\nThis is $day $dte in $mon of $year ($tf)"
+fi
+
+-----------------------------------------------------
+  
+32)  
+
+  
+  #!/bin/bash
+
+
+usrid=(`cut -d ":" -f3 /etc/passwd`)  
+if [ $# -gt 0 ]  
+then
+if [ $# -eq 1 ] 
+then
+echo "Error : Please pass 2 arguments through CL.
+Usage : ./30_user_ids.sh 100 200"
+elif [ $1 -gt $2 ]    
+then
+echo "Error : Invalid range. Please enter the valid range through CL."
+else
+count=0  
+for i in ${usrid[@]}  
+	do
+if [ $i -ge $1 -a $i -le $2 ]   
+	then
+  let count=$count+1
+	fi
+	done
+	echo "Total count of user ID between $1 to $2 is : $count"
+	fi
+     else  
+   count=0
+  for i in ${usrid[@]}
+	do
+if [ $i -ge 500 -a $i -le 10000 ]
+	then
+	let count=$count+1
+	fi
+	done
+	echo "Total count of user ID between 500 to 10000 is: $count"
+         fi
+	 
+---------------------------------------------
+
+17)
+
+#!/bin/bash
+#print usage 
+if [ -z $1 ];then
+        echo "Usage :$(basename $0) parent-directory"
+        exit 1
+fi
+
+#process all subdirectories and files in parent directory
+all="$(find $1 -depth)"
+
+
+
+for name in ${all}; do
+        #set new name in lower case for files and directories
+        new_name="$(dirname "${name}")/$(basename "${name}" | tr '[A-Z]' '[a-z]')"
+
+        #check if new name already exists
+        if [ "${name}" != "${new_name}" ]; then
+                [ ! -e "${new_name}" ] && mv -T "${name}" "${new_name}"; echo "${name} was renamed to ${new_name}" || echo "${name} wasn't renamed!"
+        fi
+done
+
+echo
+echo
+#list directories and file new names in lowercase
+echo "Directories and files with new names in lowercase letters"
+find $(echo $1 | tr 'A-Z' 'a-z') -depth
+
+exit 0
+
+
+
+
+Orrrr
+
+
+
+
+for f in `find`; do mv -v "$f" "`echo $f | tr '[A-Z]' '[a-z]'`"; done
+
+
+
+-------------------------------------------------------------------
+
+
+18)
+
+
+	 
  
